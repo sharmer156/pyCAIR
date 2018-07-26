@@ -1,3 +1,16 @@
+PyCAIR 是一个基于内容感知的图像大小调整库，它具有以下几大特征：
+
+
+
+能够基于所提供的图像生成能量图和灰度图像格式。
+
+Seam Carving 算法试图通过能量图获取最低能量值，以找到图像中一些无用区域。
+
+在动态编程和backtracking 的帮助下，Seam Carving 算法能够使用自上而下或自左往右的方法在图像上生成单独的接缝(取决于垂直或水平调整大小)。
+
+通过逐行遍历图像矩阵，针对每个条目计算所有可能接缝数的累积最小能量。通过将当前行像素与前一行相邻像素的最低值求和来计算最小能量值水平。
+
+从最后一行开始，在能量矩阵中找出成本最低的接缝并将其移除。迭代地重复该过程，直到根据用户指定的比率调整图像大小。
 <h1 align="center"><img alt="pyCAIR Logo" src="https://cdn.rawgit.com/avidLearnerInProgress/pyCAIR/e11bbea2/others/logo.jpg" width="250"></h1>
 
 pyCAIR is a content-aware image resizing(CAIR) [library](https://pypi.org/project/pyCAIR/) based on [Seam Carving for Content-Aware Image Resizing](http://http://graphics.cs.cmu.edu/courses/15-463/2012_fall/hw/proj3-seamcarving/imret.pdf "Seam Carving for Content-Aware Image Resizing") paper.
